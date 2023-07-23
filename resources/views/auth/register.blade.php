@@ -33,7 +33,7 @@
                         value="{{ old('name')}}"
                     />
                     @error('name')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text.center">
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{$message}}
                         </p>
                     @enderror
@@ -73,7 +73,7 @@
                         value="{{ old('email')}}"
                     />
                     @error('email')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text.center">
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{$message}}
                         </p>
                     @enderror
@@ -92,7 +92,7 @@
                         class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
                     />
                     @error('password')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text.center">
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{$message}}
                         </p>
                     @enderror
