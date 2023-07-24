@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Devstagram - @yield('titulo')</title>
-        
+        <script src="{{ asset('vendor/livewire/livewire.js') }}"></script>
+
         @stack('styles')
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
-
+        @livewireStyles
     </head>
     <body class="bg-gray-100">
 
@@ -17,9 +18,9 @@
         <header class="p-5 border-b bg-white shadow">
                                                 <!-- al lado derecho por justify-between-->
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-3xl font-black">
+                <a href="{{ route('home') }}" class="text-3xl font-black">
                     Devstagram
-                </h1>
+                </a>
 
                 @auth
                     <nav class="flex gap-2 items-center">
@@ -78,6 +79,6 @@
             Devstagram - Todos los derechos reservados 
             {{ now()->year }}
         </footer>
-
+        @livewireScripts
     </body>
 </html>

@@ -9,6 +9,8 @@ use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\ImagenesController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
+use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +26,7 @@ use App\Http\Controllers\ComentarioController;
 
 // End points - acabo de agregar este comentario
 
-Route::get('/', function () {
-    return view('principal');
-});
+Route::get('/', HomeController::class)->name('home');
 
 // Registro de usuarios
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
@@ -59,3 +59,7 @@ Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('
 
 // Ruta para mostrar los posts del usuario por su nombre de usuario
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
+
+// Siguiendo usuarios
+Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');
+Route::delete('/{user:username}/unfollow',[FollowerController::class, 'destroy'])->name('users.unfollow');
