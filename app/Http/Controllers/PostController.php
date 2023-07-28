@@ -75,6 +75,9 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $this->authorize('delete',$post);
+
+        // Eliminar likes
+        $post->likes()->delete();
         $post->delete();
 
         //Eliminar imagen
