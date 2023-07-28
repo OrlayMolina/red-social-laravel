@@ -77,7 +77,7 @@ class PostController extends Controller
         $this->authorize('delete',$post);
 
         // Eliminar likes
-        $post->likes()->delete();
+        $post->likes()->delete();   
         $post->delete();
 
         //Eliminar imagen
